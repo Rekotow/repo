@@ -17,8 +17,8 @@ jobs:
         HALF_CHARS: HalfChars.txt
 
         BUILD_PATH: build
-        ASM_PATH: sce/jp/asm
-        CSV_PATH: sce/jp/csv
+        ASM_PATH: sce\jp\asm
+        CSV_PATH: sce\jp\csv
         DIST_PATH: dist
       
     steps:
@@ -34,8 +34,8 @@ jobs:
 
     - name: Copy data to build folder
       run: |
-        Xcopy /E /I "$env:ASM_PATH" "$env:BUILD_PATH"
-        Xcopy /E /I "$env:CSV_PATH" "$env:BUILD_PATH"
+        Xcopy /E /I ".\$env:ASM_PATH" ".\$env:BUILD_PATH"
+        Xcopy /E /I ".\$env:CSV_PATH" ".\$env:BUILD_PATH"
         cd "$env:BUILD_PATH"
         ls
 
