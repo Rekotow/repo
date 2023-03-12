@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on:  windows-latest
+    runs-on: windows-latest
     env:
         SCRIPT_EXE_URL: ${{ secrets.SCRIPT_EXE_URL }}
         CHARS_TABLE_URL: ${{ secrets.CHARS_TABLE_URL }}
@@ -21,7 +21,7 @@ jobs:
         CSV_PATH: sce/jp/csv
         DIST_PATH: dist
       
-      steps:
+    steps:
     - uses: actions/checkout@v3
 
     - name: Download script tools
