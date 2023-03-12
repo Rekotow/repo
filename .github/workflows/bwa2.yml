@@ -1,0 +1,51 @@
+name: Script
+
+on:
+  push:
+    branches: [ taw2 ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+      env:
+        SCRIPT_EXE_URL: ${{ secrets.SCRIPT_EXE_URL }}
+        CHARS_TABLE_URL: ${{ secrets.CHARS_TABLE_URL }}
+        HALF_CHARS_URL: ${{ secrets.HALF_CHARS_URL }}
+
+        SCRIPT_EXE: wa2.script.exe
+        CHARS_TABLE: CharsTable.txt
+        HALF_CHARS: HalfChars.txt
+
+        BUILD_PATH: build
+        ASM_PATH: sce/jp/asm
+        CSV_PATH: sce/jp/csv
+        DIST_PATH: dist
+      
+      steps:
+    - uses: actions/checkout@v3
+
+    - name: Download script tools
+      run: |
+        ls
+        curl -o $env:SCRIPT_EXE "$env:SCRIPT_EXE_URL"
+        curl -o $env:CHARS_TABLE "$env:CHARS_TABLE_URL"
+        curl -o $env:HALF_CHARS "$env:HALF_CHARS_URL"
+        ls
+
+    - name: Copy data to build folder
+      run: |
+        cp -vr "$env:ASM_PATH/." "$env:BUILD_PATH"
+        cp -vr "$env:CSV_PATH/." "$env:BUILD_PATH"
+
+    - name: Insert script
+      run: |
+        $env:SCRIPT_EXE -i -dir "$env:BUILD_PATH" -o "$env:DIST_PATH" -f csv
+
+    - name: Upload dist
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: |
+          ./${{env.DIST_PATH}}/*.*
+        
+    
