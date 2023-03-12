@@ -36,10 +36,13 @@ jobs:
       run: |
         cp -v "$env:ASM_PATH/." "$env:BUILD_PATH"
         cp -v "$env:CSV_PATH/." "$env:BUILD_PATH"
+        cd "$env:BUILD_PATH"
+        ls
 
     - name: Insert script
       run: |
-        .\${{env.SCRIPT_EXE}} -i -dir "$env:BUILD_PATH" -o "$env:DIST_PATH" -f csv
+        .\${{env.SCRIPT_EXE}}
+        .\${{env.SCRIPT_EXE}} -i -dir .\${{env.BUILD_PATH}} -o .\${{env.DIST_PATH}} -f csv
 
     - name: Upload dist
       uses: actions/upload-artifact@v2
