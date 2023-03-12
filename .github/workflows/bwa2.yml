@@ -2,7 +2,7 @@ name: Script
 
 on:
   push:
-    branches: [ taw2 ]
+    branches: [ twa2 ]
 
 jobs:
   build:
