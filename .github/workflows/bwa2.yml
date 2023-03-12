@@ -18,7 +18,7 @@ jobs:
 
         BUILD_PATH: build
         ASM_PATH: sce\jp\asm
-        CSV_PATH: sce\jp\csv
+        CSV_PATH: sce\trans\csv
         DIST_PATH: dist
       
     steps:
@@ -34,15 +34,11 @@ jobs:
 
     - name: Copy data to build folder
       run: |
-        mkdir ".\$env:BUILD_PATH"
         Xcopy /E /I ".\$env:ASM_PATH" ".\$env:BUILD_PATH"
         Xcopy /E /I ".\$env:CSV_PATH" ".\$env:BUILD_PATH"
-        cd "$env:BUILD_PATH"
-        ls
 
     - name: Insert script
       run: |
-        .\${{env.SCRIPT_EXE}}
         .\${{env.SCRIPT_EXE}} -i -dir .\${{env.BUILD_PATH}} -o .\${{env.DIST_PATH}} -f csv
 
     - name: Upload dist
