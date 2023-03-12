@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-      env:
+    env:
         SCRIPT_EXE_URL: ${{ secrets.SCRIPT_EXE_URL }}
         CHARS_TABLE_URL: ${{ secrets.CHARS_TABLE_URL }}
         HALF_CHARS_URL: ${{ secrets.HALF_CHARS_URL }}
