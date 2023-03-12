@@ -39,7 +39,7 @@ jobs:
 
     - name: Insert script
       run: |
-        $env:SCRIPT_EXE -i -dir "$env:BUILD_PATH" -o "$env:DIST_PATH" -f csv
+        "$env:SCRIPT_EXE" -i -dir "$env:BUILD_PATH" -o "$env:DIST_PATH" -f csv
 
     - name: Upload dist
       uses: actions/upload-artifact@v2
