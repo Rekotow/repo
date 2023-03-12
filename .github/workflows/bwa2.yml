@@ -34,6 +34,7 @@ jobs:
 
     - name: Copy data to build folder
       run: |
+        mkdir ".\$env:BUILD_PATH"
         Xcopy /E /I ".\$env:ASM_PATH" ".\$env:BUILD_PATH"
         Xcopy /E /I ".\$env:CSV_PATH" ".\$env:BUILD_PATH"
         cd "$env:BUILD_PATH"
