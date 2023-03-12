@@ -42,7 +42,7 @@ jobs:
         .\${{env.SCRIPT_EXE}} -i -dir .\${{env.BUILD_PATH}} -o .\${{env.DIST_PATH}} -f csv
 
     - name: Upload dist
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: dist
         path: |
