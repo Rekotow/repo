@@ -876,7 +876,7 @@ PUSH INT 1
 OPERATOR ADD
 OPERATOR MOV
 OPERATOR POP
-@VCALL SetMessageE(RES<0020>, 11, 1)  ; ―<R――|もけ>\n───
+@VCALL SetMessageE(RES<0020>, 11, 1)  ; ―<R――|もけ>\nỞỞỞ
 PUSH INT 1
 CALL EndMessage
 OPERATOR POP
@@ -916,7 +916,7 @@ PUSH FLOAT 720
 CALL BC
 OPERATOR POP
 
-@VCALL SetMessageE(RES<0024>, 14, 1)  ; ―――\n───
+@VCALL SetMessageE(RES<0024>, 14, 1)  ; ―――\nỞỞỞ
 PUSH INT 1
 CALL EndMessage
 OPERATOR POP
@@ -1201,7 +1201,7 @@ PUSH INT 0
 CALL SetWeather
 OPERATOR POP
 
-@VCALL SetMessageE(RES<0031>, 20, 1)  ; ―――\n───
+@VCALL SetMessageE(RES<0031>, 20, 1)  ; ―――\nỞỞỞ
 PUSH INT 1
 CALL EndMessage
 OPERATOR POP
@@ -1832,10 +1832,7 @@ PUSH INT 1
 CALL EndMessage
 OPERATOR POP
 
-PUSH INT 0
-CALL WN
-OPERATOR POP
-
+@VCALL WN(RES<0080>)  ; 春希
 @VCALL SetMessage(RES<0077>, 33, 1)  ; あーんど
 PUSH INT 0
 CALL EndMessage

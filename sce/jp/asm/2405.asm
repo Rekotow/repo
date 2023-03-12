@@ -3884,7 +3884,7 @@ PUSH INT 106
 CALL VV
 OPERATOR POP
 
-@VCALL SetMessageE(RES<0335>, 224, 1)  ; 「あなたを──殺さなくてはいけない！」
+@VCALL SetMessageE(RES<0335>, 224, 1)  ; 「あなたをỞỞ殺さなくてはいけない！」
 PUSH INT 1
 CALL EndMessage
 OPERATOR POP
@@ -4307,7 +4307,7 @@ PUSH INT 112
 CALL VV
 OPERATOR POP
 
-@VCALL SetMessageE(RES<0368>, 251, 1)  ; 「……起きろって──」
+@VCALL SetMessageE(RES<0368>, 251, 1)  ; 「……起きろってỞỞ」
 PUSH INT 1
 CALL EndMessage
 OPERATOR POP
@@ -4331,7 +4331,7 @@ PUSH INT 113
 CALL VV
 OPERATOR POP
 
-@VCALL SetMessageE(RES<0371>, 253, 1)  ; 「──言ってんだよぉぉぉーーーーーーーーーーーッ！」
+@VCALL SetMessageE(RES<0371>, 253, 1)  ; 「ỞỞ言ってんだよぉぉぉーーーーーーーーーーーッ！」
 PUSH INT 1
 CALL EndMessage
 OPERATOR POP
