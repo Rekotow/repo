@@ -1,4 +1,4 @@
-Id,NameId,NameJp,Jp,Traslate,NameTranslate,Notes
+Id,NameId,Name,Text,Traslate,NameTranslate,Notes
 4,,,テキスト進行,,,
 5,,,フラグで分岐確認したルートはそのまま下記へ,,,
 6,,,テキスト進行,,,
@@ -58,7 +58,7 @@ Id,NameId,NameJp,Jp,Traslate,NameTranslate,Notes
 75,74,ほわるば２,"ああ\kうえ\k
 ",,,
 76,,,まじで,,,
-77,,,あーんど,,,
+77,80,春希,あーんど,,,
 78,,,ループします,,,
 0,,,,,,
 1,,,B990000.tga,,,
